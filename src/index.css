@@ -1,0 +1,123 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9fafb;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  text-align: center;
+  color: #1f2937;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.form-space {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  justify-content: center;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 90%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+  border-color: #3b82f6;
+  outline: none;
+}
+
+button {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  margin-right: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #2563eb;
+}
+
+button:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+pre {
+  background: #f3f4f6;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 90%;
+  margin: 20px auto;
+  overflow-x: auto;
+  font-size: 14px;
+  color: #111827;
+  justify-content: left;
+}
+
+.res-bx {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  text-align: left;
+}
+
+.result-box {
+  background-color: #ffffff;
+  max-width: 630px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.error {
+  color: #dc2626;
+  font-weight: bold;
+  text-align: center;
+}
+
+.pdf-preview {
+  margin-top: 20px;
+}
+
+.pdf-preview h4 {
+  margin-bottom: 10px;
+  color: #374151;
+}
+
+/* 
+width="580px"
+height="420px"
+  */
+
+@media (max-width:375px) {
+  .cert-iframe, .pdf-preview {
+    width:200px;
+    height:300px;
+  }  
+}
+
+@media (min-width:375px) and (max-width:426px) {
+  .cert-iframe, .pdf-preview {
+    width: 290px;
+    height:300px;
+  }  
+}
