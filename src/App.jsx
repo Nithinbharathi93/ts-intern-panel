@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import './App.css';
 import axios from 'axios';
+import { TrophySpin } from 'react-loading-indicators';
 
 const SERVER_API = import.meta.env.VITE_SERVER_API;
 
 function App() {
   const [formData, setFormData] = useState({ CertNo: '' });
   const [intern, setIntern] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -14,8 +16,10 @@ function App() {
 
   const handleGet = async () => {
     try {
+      setLoading(true);
       const res = await axios.get(`${SERVER_API}${formData.CertNo}`);
       setIntern(res.data);
+      setLoading(false)
     } catch (err) {
       setIntern({ error: err.response?.data?.error || 'Fetch failed' });
     }
@@ -37,8 +41,11 @@ function App() {
           placeholder="Certificate No"
           onChange={handleChange}
         />
-        <div style={{ marginTop: '1rem' }}>
+        <div  className='btn-box' style={{ marginTop: '1rem' }}>
           <button type="button" onClick={handleGet}>Check for Intern</button>
+          {loading ? (
+            <TrophySpin color={["#797a1d", "#a2a327", "#cbcc31", "#d6d759"]} size='small' />
+          ) : (<></>)}
         </div>
       </form>
 

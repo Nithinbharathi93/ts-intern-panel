@@ -121,3 +121,8 @@ height="420px"
     height:300px;
   }  
 }
+
+.btn-box {
+  display: flex ;
+  justify-content: center;
+}
